@@ -45,3 +45,58 @@ function addSquares(a , b) {
 
 // console.log(addSquares(15 , 12)) ; 
 // console.log(addSquares(9 , 5)) ; 
+
+
+
+
+
+
+// advance function conscepts  Call back function , arrow function 
+
+
+// arrow function
+
+const greet = (num) => {             // this function has no name & declession of "functionn" 
+    for(i = 0 ; i<num ; i++){
+        console.log("Hello world "); 
+    }
+}
+
+
+// greet(5) ; 
+
+
+
+
+
+
+
+
+// callback fuctions (A callback is a function passed as an argument to anther function)
+
+const calculate = (a , b , operation) => {
+    return operation(a , b ) ; 
+}; 
+
+// method one 
+
+const addition =  calculate(3 , 4 , function(num1 , num2 ){ return num1+num2}); 
+console.log(addition);
+
+
+
+// method two 
+
+const  subtraction = (a , b) => a-b ; 
+
+const subResult = calculate(8 , 3 , subtraction);
+
+console.log(subResult);
+
+
+
+
+
+
+
+ 
