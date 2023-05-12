@@ -10,7 +10,7 @@ function sum(a , b ){
 
 // console.log(sum(a,b)); 
 
-// const c = 15 ; 
+// const c = 15 ;  
 // const d = 15 ; 
 
 // console.log(sum(c , d)); 
@@ -81,7 +81,7 @@ const calculate = (a , b , operation) => {
 // method one 
 
 const addition =  calculate(3 , 4 , function(num1 , num2 ){ return num1+num2}); 
-console.log(addition);
+// console.log(addition);
 
 
 
@@ -91,7 +91,34 @@ const  subtraction = (a , b) => a-b ;
 
 const subResult = calculate(8 , 3 , subtraction);
 
-console.log(subResult);
+// console.log(subResult);
+
+
+
+
+
+
+/// asyncroness function 
+
+setTimeout(function(){console.log("Hello Gulshan")} , 5000) ; 
+
+function getCheese(){
+   setTimeout(() => {
+        const cheese = "🧀" ;
+        console.log("This is cheese " , cheese) ;  
+        return cheese ; 
+    }, 5000);
+}
+
+
+getCheese() ; 
+
+
+
+
+
+
+//
 
 
 
