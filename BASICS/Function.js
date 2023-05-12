@@ -98,32 +98,64 @@ const subResult = calculate(8 , 3 , subtraction);
 
 
 
-/// asyncroness function 
-
-setTimeout(function(){console.log("Hello Gulshan")} , 5000) ; 
-
-function getCheese(){
-   setTimeout(() => {
-        const cheese = "🧀" ;
-        console.log("This is cheese " , cheese) ;  
-        return cheese ; 
-    }, 5000);
-}
-
-
-getCheese() ; 
-
-
-
-
-
-
-//
-
-
-
-
-
-
-
+/// asyncroness function  & promises in js 
  
+
+//setTimeout(function(){console.log("Hello Gulshan")} , 5000) ; 
+
+
+//cheese 
+function getCheese(){
+    return new Promise((resolve , reject)=>{ 
+    setTimeout(() => {
+    const cheese = "🧀" ;
+    resolve(cheese) ; 
+    }, 2000);
+    })
+   }
+   
+   //dough
+   function makedough(cheese){
+    return new Promise((resolve , reject)=>{ 
+    setTimeout(() => {
+    const dough = cheese + "🍩" ;
+    resolve(dough) ; 
+    // reject("bad dough")
+    }, 2000);
+    })
+   }
+   
+   // pizza
+   function backpizza(dough){
+    return new Promise((resolve , reject)=>{ 
+    setTimeout(() => {
+    const pizza = dough+"🍕" ;
+    resolve(pizza) ; 
+    }, 2000);
+    })
+   }
+
+
+
+   async function orderpizza(){
+         const cheese = await getCheese(); 
+         const dough = await makedough(cheese) ; 
+         const pizza = await backpizza(dough) ; 
+
+         console.log("Here is pizza " + pizza) ; 
+   }
+
+   orderpizza( ) ; 
+   
+//    getCheese().then((cheese)=>{
+//     console.log("This is cheese " , cheese) ; 
+//     return makedough(cheese)
+//    })
+//    .then((dough)=>{
+//     console.log("This is dough " , dough) ; 
+//     return backpizza(dough) ;
+//    })
+//    .then((pizza)=>{
+//     console.log("This is pizza " , pizza) ; 
+//    }).catch((Data)=>{ console.log(Data)});
+   
