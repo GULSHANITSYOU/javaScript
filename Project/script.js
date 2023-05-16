@@ -39,3 +39,13 @@ const questions = [
         ]
     }
 ]; 
+
+
+
+const questionElement = document.getElementById('question') ;
+const answerButton = document.getElementById('answerBtn') ;
+const nextButton = document.getElementById('nextBtn') ;
+
+let currentQutionIndex = 0 ; 
+let score = 0 ; 
+
